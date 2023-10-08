@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+    <link rel="stylesheet" href="style.css">
+<head>
+    <link rel="icon" href="https://cdn-icons-png.flaticon.com/128/2633/2633871.png" type="image/x-icon">
+    <title>羽球選手評分表</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            
+        }
+        table {
+            width: 80%;
+            margin: 20px auto;
+            border-collapse: collapse;
+            background-color: #fff;
+        }
+        th, td {
+            padding: 10px;
+            text-align: center;
+            border: 1px solid #ccc;
+        }
+        th {
+            background-color: #333;
+            color: #fff;
+        }
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <div class="center">
+    <h1>羽球選手評分表</h1>
+</div>
+    <table>
+        <tr>
+            <th>選手姓名</th>
+            <th>技術手法</th>
+            <th>身體素質</th>
+            <th>進攻能力</th>
+            <th>防守能力</th>
+            <th>球商處理</th>
+            <th>心理素質</th>
+        </tr>
+        <tr>
+            <td><input type="text" id="playerName1" value=""></td>
+            <td><input type="number" id="technicalmeans1" value="0"></td>
+            <td><input type="number" id="physicalfitness1" value="0"></td>
+            <td><input type="number" id="Offensiveability1" value="0"></td>
+            <td><input type="number" id="defensiveability1" value="0"></td>
+            <td><input type="number" id="Golfdealerprocessing1" value="0"></td>
+            <td><input type="number" id="psychologicalquality1" value="0"></td>
+        </tr>
+        <tr>
+            <td><input type="text" id="playerName2" value=""></td>
+            <td><input type="number" id="technicalmeans2" value="0"></td>
+            <td><input type="number" id="physicalfitness2" value="0"></td>
+            <td><input type="number" id="Offensiveability2" value="0"></td>
+            <td><input type="number" id="defensiveability2" value="0"></td>
+            <td><input type="number" id="Golfdealerprocessing2" value="0"></td>
+            <td><input type="number" id="psychologicalquality2" value="0"></td>
+        </tr>
+        <tr>
+            <td><input type="text" id="playerName3" value=""></td>
+            <td><input type="number" id="technicalmeans3" value="0"></td>
+            <td><input type="number" id="physicalfitness3" value="0"></td>
+            <td><input type="number" id="Offensiveability3" value="0"></td>
+            <td><input type="number" id="defensiveability3" value="0"></td>
+            <td><input type="number" id="Golfdealerprocessing3" value="0"></td>
+            <td><input type="number" id="psychologicalquality3" value="0"></td>
+        </tr>
+
+    </table>
+    <div class="center">
+    <button style="width:120px;height:40px;" onclick="calculateScores()">計算選手評分</button>
+    </div>
+    <div id="result"></div>
+
+    <script>
+        function calculateScores() {
+            const playerName1 = document.getElementById("playerName1").value;
+            const playerName2 = document.getElementById("playerName2").value;
+            const playerName3 = document.getElementById("playerName3").value;
+
+            const technicalmeans1 = parseInt(document.getElementById("technicalmeans1").value);
+            const physicalfitness1 = parseInt(document.getElementById("physicalfitness1").value);
+            const Offensiveability1 = parseInt(document.getElementById("Offensiveability1").value);
+            const defensiveability1 = parseInt(document.getElementById("defensiveability1").value);
+            const Golfdealerprocessing1 = parseInt(document.getElementById("Golfdealerprocessing1").value);
+            const psychologicalquality1 = parseInt(document.getElementById("psychologicalquality1").value);
+
+            const technicalmeans2 = parseInt(document.getElementById("technicalmeans2").value);
+            const physicalfitness2 = parseInt(document.getElementById("physicalfitness2").value);
+            const Offensiveability2 = parseInt(document.getElementById("Offensiveability2").value);
+            const defensiveability2 = parseInt(document.getElementById("defensiveability2").value);
+            const Golfdealerprocessing2 = parseInt(document.getElementById("Golfdealerprocessing2").value);
+            const psychologicalquality2 = parseInt(document.getElementById("psychologicalquality2").value);
+
+            const technicalmeans3 = parseInt(document.getElementById("technicalmeans3").value);
+            const physicalfitness3 = parseInt(document.getElementById("physicalfitness3").value);
+            const Offensiveability3 = parseInt(document.getElementById("Offensiveability3").value);
+            const defensiveability3 = parseInt(document.getElementById("defensiveability3").value);
+            const Golfdealerprocessing3 = parseInt(document.getElementById("Golfdealerprocessing3").value);
+            const psychologicalquality3 = parseInt(document.getElementById("psychologicalquality3").value);
+
+            // 计算总分
+            const totalScore1 = technicalmeans1 + physicalfitness1 + Offensiveability1 + defensiveability1 + Golfdealerprocessing1 + psychologicalquality1;
+            const totalScore2 = technicalmeans2 + physicalfitness2 + Offensiveability2 + defensiveability2 + Golfdealerprocessing2 + psychologicalquality2;
+            const totalScore3 = technicalmeans3 + physicalfitness3 + Offensiveability3 + defensiveability3 + Golfdealerprocessing3 + psychologicalquality3;
+
+            // 显示结果
+            const result = document.getElementById("result");
+            result.innerHTML = `
+            <div class="center">
+                <h2>數據總分</h2>
+                <p>${playerName1}: ${totalScore1}</p>
+                <p>${playerName2}: ${totalScore2}</p>
+                <p>${playerName3}: ${totalScore3}</p>
+            </div>    
+            `;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,281 @@
+body {
+     background-image: url("https://pic.pimg.tw/sic27ap/1394442199-2726821780.gif");  
+     background-repeat: no-repeat;     background-position: center;     background-color: lightBlue ; 
+     background-size:cover;
+     color:blue;
+     box-shadow:0px 0px 10px red inset ;
+     justify-content: center;
+     align-items: center;
+     min-height: 100vh;
+    } 
+
+
+.aaa {
+      width: 100px;
+      height: 100px;
+      position: relative;
+  
+      /* animation 參數設定 */
+      animation-name: MoveToRight;    /*動畫名稱，需與 keyframe 名稱對應*/
+      animation-duration: 4s;    /*動畫持續時間，單位為秒*/
+      animation-delay: 2s;    /*動畫延遲開始時間*/
+      animation-iteration-count: infinite;    /*動畫次數，infinite 為無限次*/    
+    }
+  
+  /* 關鍵影格(@keyframe) */
+  @keyframes MoveToRight {
+      0% { left: 0; }
+      25% { left: 20%; }
+      50% { left: 40%; }
+      75% { left: 60%; }
+      100% { left: 80%; }
+    }
+
+
+
+
+
+
+
+
+
+*{margin:0;padding:0;}
+div img{width:500px;height:300px;}
+.center{     
+     text-align: center;        
+}
+
+
+.anime{
+     position: relative;
+     height:300px;
+     margin-top:20px;
+   }
+    
+   .anime h3{
+     text-align: center;
+     font-size:28px;
+   }
+    
+   .anime a{
+     display: block;
+     position: absolute;
+     top:20%;
+     left:35%;
+     opacity: 0;
+     filter: alpha(opacity=0);
+     /*動畫全長時間設定*/
+     -webkit-animation: slider 20s linear infinite;
+     animation: slider 20s linear infinite;
+   }
+    
+   /*動畫關鍵影格, slider動畫名字*/
+     @-webkit-keyframes slider {
+       2.5% {
+         opacity: 1;
+         filter: alpha(opacity=100);
+       }
+       17.5% {
+       opacity: 1;
+       filter: alpha(opacity=100);
+       }
+       20% {
+       opacity: 0;
+       filter: alpha(opacity=0);
+       }
+     }
+     @keyframes slider {
+       2.5% {
+         opacity: 1;
+         filter: alpha(opacity=100);
+       }
+       17.5% {
+       opacity: 1;
+       filter: alpha(opacity=100);
+       }
+       20% {
+       opacity: 0;
+       filter: alpha(opacity=0);
+       }
+     }
+    
+   /*每個圖片相隔4秒*/
+     .anime a:nth-child(1) {
+       -webkit-animation-delay: 0s;
+       animation-delay: 0s;
+     }
+    
+     .anime a:nth-child(2) {
+       -webkit-animation-delay: 4s;
+       animation-delay: 4s;
+     }
+    
+     .anime a:nth-child(3) {
+       -webkit-animation-delay: 8s;
+       animation-delay: 8s;
+     }
+    
+     .anime a:nth-child(4) {
+       -webkit-animation-delay: 12s;
+       animation-delay: 12s;
+     }
+    
+     .anime a:nth-child(5) {
+       -webkit-animation-delay: 16s;
+       animation-delay: 16s;
+     }
+    
+   /*當滑鼠移動到圖片的區塊時，動畫暫停*/
+     .anime a:hover{
+     -webkit-animation-play-state: paused;
+     animation-play-state: paused;
+     }
+
+
+     .container {
+      display: -webkit-flex;
+      justify-content: Space-between;
+    }
+
+     .initial {
+      -webkit-flex: 0;
+      flex: 0;
+      }
+
+      .none {
+        -webkit-flex: 0;
+        flex: 0;
+      }
+
+      .nationalPlate>.national_top>#fontChange{
+        margin:0;
+        padding:0;
+    }
+    
+
+
+
+    
+    ul.slides {
+      position: relative;
+      width: 1518px;
+      height: 500px;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      background-color: #eee;
+      overflow: hidden;
+    }
+    
+    li.slide {
+      margin: 0;
+      padding: 0;
+      width: inherit;
+      height: inherit;
+      position: absolute;
+      top: 0;
+      left: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: Helvetica;
+      font-size: 120px;
+      color: #fff;
+      transition: .5s transform ease-in-out;
+    }
+    
+    .slide:nth-of-type(1) {
+      background-color: #F2E205;
+    }
+    
+    .slide:nth-of-type(2) {
+      background-color: #F25C05;
+      left: 100%;
+    }
+    
+    .slide:nth-of-type(3) {
+      background-color: #495F8C;
+      left: 200%;
+    }
+    
+    input[type="radio2"] {
+      position: relative;
+      z-index: 100;
+      display: none;
+    }
+    
+    .controls-visible {
+      position: absolute;
+      width: 100%;
+      bottom: 12px;
+      text-align: center;
+    }
+    
+    .controls-visible label {
+      display: inline-block;
+      width: 10px;
+      height: 10px;
+      background-color: #fff;
+      border-radius: 50%;
+      margin: 0 3px;
+      border: 2px solid #fff;
+    }
+    
+    .slides input[type="radio"]:nth-of-type(1):checked ~ .controls-visible label:nth-of-type(1) {
+      background-color: #333;
+    }
+    
+    .slides input[type="radio"]:nth-of-type(2):checked ~ .controls-visible label:nth-of-type(2) {
+      background-color: #333;
+    }
+    
+    .slides input[type="radio"]:nth-of-type(3):checked ~ .controls-visible label:nth-of-type(3) {
+      background-color: #333;
+    }
+    
+    .slides input[type="radio"]:nth-of-type(1):checked ~ .slide {
+      transform: translatex(0%);
+    }
+    
+    .slides input[type="radio"]:nth-of-type(2):checked ~ .slide {
+      transform: translatex(-100%);
+    }
+    
+    .slides input[type="radio"]:nth-of-type(3):checked ~ .slide {
+      transform: translatex(-200%);
+    }
+    
+    
+    /* Left/Right Button Classes Below */
+    
+    .navigator {
+      position: absolute;
+      top: 50%;
+      transform: translatey(-50%);
+      width: 100%;
+      z-index: 100;
+      padding: 0 20px;
+      display: flex;
+      justify-content: space-between;
+      box-sizing: border-box;
+      display: none;
+    }
+    
+    .navigator i {
+      font-size: 32px;
+      color :#333;
+    }
+    
+    .slides input[type="radio"]:nth-of-type(1):checked ~ .navigator:nth-of-type(1) {
+      display: flex;
+    }
+    
+    .slides input[type="radio"]:nth-of-type(2):checked ~ .navigator:nth-of-type(2) {
+      display: flex;
+    }
+    
+    .slides input[type="radio"]:nth-of-type(3):checked ~ .navigator:nth-of-type(3) {
+      display: flex;
+    }
+
+    
